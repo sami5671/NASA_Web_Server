@@ -24,6 +24,11 @@ app.get('/', (req, res) => {
     res.send('Server is running!');
 });
 
+app.use('/api/users', require('./routes/user'));
+app.use('/api/locations', require('./routes/location'));
+app.use('/api/notifications', require('./routes/notification'));
+app.use('/api/measurements', require('./routes/measurement'));
+
 
 // Start the server
 app.listen(PORT, () => {
